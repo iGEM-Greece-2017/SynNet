@@ -25,6 +25,8 @@ if nargin  < 2; ConstraintName = [];end
 
 F = fopen(Constraints_File, 'r');
 InBuff = textscan(F, '%s%s', 'CommentStyle', '#', 'delimiter', '\t', 'MultipleDelimsAsOne', 0);
+nonEmpty= ~cellfun(@isempty, InBuff{1});
+InBuff= {InBuff{1}(nonEmpty),InBuff{2}(nonEmpty)};
 
 if ~isempty(ConstraintName)
     % The mode that function is called to get a specific contrant
@@ -33,7 +35,7 @@ if ~isempty(ConstraintName)
 else
     % The mode that function is called to get all of the constraints in the
     % input file
-    for i = 1:length(InBuff{1});
+    for i = 1:length(InBuff{1})
         C.(InBuff{1}{i})= Cast_String(InBuff{2}{i});
     end
     fclose(F);

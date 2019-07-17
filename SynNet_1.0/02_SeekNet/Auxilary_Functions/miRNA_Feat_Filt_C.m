@@ -2,7 +2,7 @@
 %       1: Quantizes the data to Zero, One, and NaN(vague, i.e. between zero and one)  based on ZeroLvl, and
 %       OneLvl thresholds. 
 %       2: Remove uninformative genes; those who are constant along all samples.
-%       3: Reoprts if the are some unresolvable samples; those that have all genes(after excluding non-informative genes) in NaN state. 
+%       3: Reports if the are some unresolvable samples; those that have all genes(after excluding non-informative genes) in NaN state. 
 %
 
 % Pejman Jun. 2014, Pejman.m@gmail.com

@@ -58,8 +58,8 @@ try
         plot([Round], [PoolComplexityold]   , '-s', 'Color',[.5 .5 .50],'MarkerFaceColor' , [.5 .5 .50], 'linewidth', 1,'DisplayName', 'Function Pool Complexity'   , 'markersize', 4);
         plot([Round], [SuccRatioold ]*100   , '-s', 'Color',[.0 .25 .55],'MarkerFaceColor' , [.0 .25 .55], 'linewidth', 1,'DisplayName', 'NewGene Success Rate'       , 'markersize', 4);
         
-        Lh = legend('show', 'location','NorthWest');
-        set(Lh, 'Interpreter','tex')
+        %Lh = legend('show', 'location','NorthWest');
+        %Lh.Interpreter= 'tex'; Lh.AutoUpdate= 'off';
         set(gcf, 'position', [200 200 1200 500]);
         set(gca,'Color',[.0 .0 0]);
         set(gcf, 'InvertHardCopy', 'off');
@@ -165,20 +165,21 @@ try
             
             if Plotting
                 %% Plot optmization internal Variables
-                figure(Fig);
+                %figure(Fig);
+                set(groot,'CurrentFigure',Fig);
                 subplot(2,6,[1:5 7:11])
                 Prx = [Round-1 Round];
-                plot(Prx, [SuccRatioold SuccRatio]*100           , '-s', 'Color', [.0 .25 .55],'MarkerFaceColor' ,  [.0 .25 .55], 'linewidth', .5,'DisplayName', 'NewGene Success Rate'       , 'markersize', 2);
-                plot(Prx, 100*[PoolComplexityold PoolComplexity] , '-s', 'Color',[.4 .4 .45],'MarkerFaceColor' , [.4 .4 .45], 'linewidth', .5,'DisplayName', 'Is formatted rate'          ,  'markersize', 2);
+                plot(Prx, [SuccRatioold SuccRatio]*100           , '-s', 'Color', [.0 .25 .55],'MarkerFaceColor' ,  [.0 .25 .55], 'linewidth', .5, 'markersize', 2,'DisplayName', 'NewGene Success Rate');
+                plot(Prx, 100*[PoolComplexityold PoolComplexity] , '-s', 'Color',[.4 .4 .45],'MarkerFaceColor' , [.4 .4 .45], 'linewidth', .5, 'markersize', 2,'DisplayName', 'Is formatted rate');
                 if CleanUpRound
                     plot([Round Round], [PoolComplexity 1]*100, '--','Color',[.4 .4 .45],'MarkerFaceColor' , [.0 .0 .15],  'linewidth', 1 , 'markersize', 4);
                     plot(Round        ,    PoolComplexity *100, 's' ,'Color',[1   0   0],'MarkerFaceColor' , [1   0   0],  'linewidth', 1 , 'markersize', 4);
                     PoolComplexity = 1;
                 end
                 
-                plot(Prx, 10.^[bestMarginold(1) bestMargin(1)], '-s' , 'Color',[1 .5 .1],'MarkerFaceColor' , [1 .5 .1], 'linewidth', .5,'DisplayName', 'Continuous Margin'     ,  'markersize', 4);
-                plot(Prx,         [bestAUCold,    bestAUC] , ':' , 'Color',[.0 .5 .15],'MarkerFaceColor' , [.0 .5 .15], 'linewidth', .5,'DisplayName', 'Best CPool.Performance'     ,  'markersize', 4);
-                plot(Prx,         [bestAUCold(1) bestAUC(1)]  , '-s', 'Color',[.0 .5 .15],'MarkerFaceColor' , [.0 .5 .15], 'linewidth', .5,'DisplayName', 'Best CPool.Performance'     ,  'markersize', 4);
+                plot(Prx, 10.^[bestMarginold(1) bestMargin(1)], '-s' , 'Color',[1 .5 .1],'MarkerFaceColor' , [1 .5 .1], 'linewidth', .5,'markersize', 4,'DisplayName', 'Continuous Margin');
+                plot(Prx,         [bestAUCold,    bestAUC] , ':' , 'Color',[.0 .5 .15],'MarkerFaceColor' , [.0 .5 .15], 'linewidth', .5,'markersize', 4,'DisplayName', 'Best CPool.Performance');
+                plot(Prx,         [bestAUCold(1) bestAUC(1)]  , '-s', 'Color',[.0 .5 .15],'MarkerFaceColor' , [.0 .5 .15], 'linewidth', .5,'markersize', 4,'DisplayName', 'Best CPool.Performance');
                 
                 xlim([Round-75, Round+25]);
                 drawnow();

@@ -23,7 +23,7 @@
 % Pejman.m@gmail.com
 %----------------------------------------------
 
-function [Result] = Evaluate_FunctionCnt(FunctionArray ,X)
+function [Result] = eval_arch1(FunctionArray ,X)
 global Consts
 
 if length(size(FunctionArray))==2
@@ -49,9 +49,6 @@ for K = size(FunctionArray,1):-1:1
         end
     end
     midLevel_act= F2(sum(RowValues,1), Consts.Continuous_Circuit_F2C, Consts.Continuous_Circuit_Tmax);
-    % Add binding sites for upreg miR to the mid level
-    %midLevel_act= mean(RowValues,1).*midLevel_act;
-    % Mid level output:
     mirFF4= Consts.Continuous_Circuit_FF4max*midLevel_act;
     lacI= Consts.Continuous_Circuit_LacImax*midLevel_act;
     %% handle the NOT part

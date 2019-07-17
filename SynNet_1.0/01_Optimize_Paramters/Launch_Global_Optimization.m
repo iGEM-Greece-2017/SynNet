@@ -29,9 +29,9 @@ Problem.Continuous_Function.Params_LowerBound = [log10(20) ; Problem.Continuous_
 Problem.Continuous_Function.Params_UpperBound = Problem.Continuous_Function.InitialParams + 1;
 
 %% Description of the Ideal Circuit
-Problem.IdealFunction.stepAt    = 25000 * 10^-2; % binarization threshold
+Problem.IdealFunction.stepAt    = 25000 * .8e-2; % binarization threshold
 Problem.IdealFunction.Step_High = 50000; % Output High value ideal (This value is never used in optimization just used ONLY for visualization)
-Problem.IdealFunction.Step_Low  = 500;   % Output Low value ideal (This value is never used in optimization just used ONLY for visualization)
+Problem.IdealFunction.Step_Low  = 20;   % Output Low value ideal (This value is never used in optimization just used ONLY for visualization)
 
 Problem.IdealFunction.FunctionArray(1,:,:) =[ % Circuit: (Gene1)
     1    0    0      ;

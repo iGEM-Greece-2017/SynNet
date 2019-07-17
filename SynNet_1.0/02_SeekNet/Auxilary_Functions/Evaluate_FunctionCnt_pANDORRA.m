@@ -23,8 +23,11 @@
 % Pejman.m@gmail.com
 %----------------------------------------------
 
-function [Result] = Evaluate_FunctionCnt(FunctionArray ,X)
+function [Result] = Evaluate_FunctionCnt_pANDORRA(FunctionArray ,X)
 global Consts
+
+% mir -> mir*
+X= X*Consts.mirScale.A0./Consts.mirScale.Kd;
 
 if length(size(FunctionArray))==2
     %% It's a Single function, format it into an 3D array of length one.
@@ -45,32 +48,29 @@ for K = size(FunctionArray,1):-1:1
     for i = 1:MaxAnd
         Filt = Fpos(i,:)>0;
         if any(Filt)
-            RowValues(i,:)= F1(X(Function(i, Filt),:),Consts.Continuous_Circuit_F1C);
+            selMir= Function(i, Filt);
+            RowValues(i,:)= F1_Kd(X(selMir,:),Consts.Kd.OR(selMir),repeats.OR(selMir));
         end
     end
-    midLevel_act= F2(sum(RowValues,1), Consts.Continuous_Circuit_F2C, Consts.Continuous_Circuit_Tmax);
-    % Add binding sites for upreg miR to the mid level
-    %midLevel_act= mean(RowValues,1).*midLevel_act;
-    % Mid level output:
-    mirFF4= Consts.Continuous_Circuit_FF4max*midLevel_act;
-    lacI= Consts.Continuous_Circuit_LacImax*midLevel_act;
+    ff4_lacI_act= F2(sum(RowValues,1), Consts.Continuous_Circuit_F2C, Consts.Continuous_Circuit_Tmax);
+    mirFF4= Consts.Continuous_Circuit_FF4max*ff4_lacI_act;
+    lacI= Consts.Continuous_Circuit_LacImax*ff4_lacI_act;
     %% handle the NOT part
-    %Result(K,:)= Consts.Continuous_Circuit_OUTmax * F1_lac(lacI,[mirFF4;X(-Function(Fneqs),:)],...
-    %  Consts.Kd.LacI,Consts.Continuous_Circuit_F1C);
-    Result(K,:)= Consts.Continuous_Circuit_OUTmax * Consts.Kd.LacI./(Consts.Kd.LacI+lacI) .* ...
-      F1([mirFF4;X(-Function(Fneqs),:)],Consts.Continuous_Circuit_F1C);
-    %Result(K,:)= Consts.Continuous_Circuit_OUTmax * F1([mirFF4;X(-Function(Fneqs),:)],Consts.Continuous_Circuit_F1C);
+    selMir= -Function(Fneqs);
+    Result(K,:)= Consts.Continuous_Circuit_OUTmax * ...
+      F1_Kd([lacI;mirFF4;X(selMir,:)],[Consts.Kd.LacI;Consts.Kd.NOT_FF4;Consts.Kd.NOT(selMir)],...
+            [1;repeats.NOT_FF4;repeats.NOT(selMir)]);
+end
 end
 
-end
-
-function Y = F1(X,Continuous_Circuit_F1C)
-S = sum(X,1);
-Y = 1 - S./(S+Continuous_Circuit_F1C);
-end
-function Y = F1_lac(lacI,X,Kd_lacI,Continuous_Circuit_F1C)
-S= sum(Continuous_Circuit_F1C./(Continuous_Circuit_F1C+X), 1);
-Y= Kd_lacI./(Kd_lacI+lacI) + S - size(X,1);
+function Y= F1_Kd(X,Kd,repeats)
+% X [miR]x[samples]
+% Kd [miR]
+% repeats [miR]
+% repeats: How many times the miR target site repeats
+  n= size(X,2);
+  S= sum(repmat(repeats.*Kd,1,n)./(repmat(Kd,1,n)+X));    % [miR]x[samples]
+  Y= S - (sum(repeats)-1);
 end
 
 function Y = F2(X, Continuous_Circuit_F2C, Continuous_Circuit_Tmax)

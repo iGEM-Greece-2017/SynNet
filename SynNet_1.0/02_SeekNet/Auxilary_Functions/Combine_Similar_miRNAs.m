@@ -81,6 +81,7 @@ miRNA_Data.GeneGroupNames(ia)=GNia; clear GNia
 SourceMiR(:,ia) = SourceMiRia;  clear SourceMiRia
 
 %% Remove redundancies
+%{
 RdnFilt = false(M,1);
 for i = 1:M-1
     for j = (i+1):M
@@ -94,7 +95,7 @@ end
 fprintf('%d miRNAs were redundant.\n', sum(RdnFilt));
 % Remove the redundant ones
 E(RdnFilt,:)=0; % Put all the redundant gene to zero expression
-
+%}
 miRNA_Data.Dnormed = E;
 fclose(Fout);
 end

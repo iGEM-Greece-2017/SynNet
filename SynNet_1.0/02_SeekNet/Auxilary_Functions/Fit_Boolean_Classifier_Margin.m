@@ -56,8 +56,8 @@ try
         plot(Round, 100  , '-s', 'Color',[.0 .25 .55],'MarkerFaceColor' , [.0 .25 .55], 'linewidth', 1,'DisplayName', 'NewGene Success Rate'       , 'markersize', 4);
         plot(Round, 100  , '-s', 'Color',[.5 .5 .50],'MarkerFaceColor' , [.5 .5 .50], 'linewidth', 1,'DisplayName', 'Function Pool Complexity'   , 'markersize', 4);
         
-        Lh = legend('show', 'location','NorthWest');
-        set(Lh, 'Interpreter','tex')
+        %Lh = legend('show', 'location','NorthWest');
+        %set(Lh, 'Interpreter','tex')
         set(gcf, 'position', [200 200 1200 500]);
         set(gca,'Color',[.0 .0 0]);
         set(gcf, 'InvertHardCopy', 'off');

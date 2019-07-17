@@ -2,11 +2,17 @@ function Seek_Net(Constraints)
 global Consts
 %% Initialization
 set(0, 'defaultTextInterpreter', 'tex');
-try addpath('Auxilary_Functions/');     catch ; end
+addpath(genpath('Auxilary_Functions/'));
 
 if nargin <1; Constraints = 'Constraints.txt'; end
 Consts = Fetch_Constraints(Constraints);
 
+%{ *** CUSTOM: iGEM Model
+Consts.Continuous_Circuit_LacImax= 10000; % molec/cell
+Consts.Kd.LacI= 666;  % molec/cell
+Consts.Continuous_Circuit_Tmax= 50000;
+Consts.Continuous_Circuit_F2C= 8430;
+%} CUSTOM: iGEM Model ***
 
 Cnt= 0;
 if Consts.IsSimulation
@@ -46,7 +52,6 @@ else
         FoutName = [Consts.OutFolder '/' Consts.AnalysisMode int2str(CancerIndex) '-' CancerLbl '.txt'];
         copyfile(Constraints,[FoutName(1:end-4) '-Used_Constants.log'],'f');
         
-        %         try
         Sim = miRNA_Feat_Filt(miRNA_Data, 0, CancerIndex);
         Sim.CancerLbl = CancerLbl;
         Sim = Fit_Classifier(Sim);
@@ -65,9 +70,6 @@ else
                 Xval([FoutName(1:end-4) '.mat'], 3);
             end
         end
-        %         catch Err
-        %             disp('Something went wrong by the way!'); disp(Err.getReport)
-        %         end
         fprintf('\n\n')
     end
 end
