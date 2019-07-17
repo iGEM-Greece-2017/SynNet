@@ -1,0 +1,68 @@
+AnalysisName	Genes	Samples	PositiveSamples	PositiveRate(%)	AnalysisMode	Pruning	HitMaxRound	WasStuck	Time(sec)	C_MarginA	C_MarginW	C_AUC	B_MarginA	B_MarginW	B_AUC	B_FPrate	B_FNrate
+2	51	2	1	50.00	C	off	0	0	6.48	2.74	2.74	1.00	1.60	1.04	100.00	0.00	0.00	
+
+Best Circuit Found:
+AUC: 100.00%	cMargin: 2.74
+~hsa-mir-21-5p
+-AND-
+~hsa-let-7f-5p
+
+
+Tag	Detail1	Detail2	Detail3
+Sample Info	Sample IDs	-	-	Lung_adenoc_A549_mock	Kidney_embryo_HEK293
+Sample Info	Sample Names	-	-	0	2
+Sample Info	Desired Annotation	-	(Binary)	0	1
+Circuit Info	Circuit Output	Circuit1	(mols/cell)	54.24	29584.55
+
+
+In-Circuit miRNAs	hsa-let-7f-5p	UGAGGUAGUAGAUUGUAUAGUU	hsa-let-7a-5p+hsa-let-7b-5p+hsa-let-7c-5p+hsa-let-7d-5p+hsa-let-7e-5p+hsa-let-7f-5p+hsa-let-7g-5p+hsa-let-7i-5p+hsa-mir-98-5p	10860.76	6.90
+In-Circuit miRNAs	hsa-mir-21-5p	UAGCUUAUCAGACUGAUGUUGA	hsa-mir-21-5p	7557.41	6.90
+Other miRNAs	hsa-mir-101-5p	UACAGUACUGUGAUAACUGAA	hsa-mir-101-5p	59.33	6.90
+Other miRNAs	hsa-mir-103-5p	AGCAGCAUUGUACAGGGCUAUGA	hsa-mir-103-5p+hsa-mir-107-5p	59.33	6.90
+Other miRNAs	hsa-mir-10a-5p	UACCCUGUAGAUCCGAAUUUGUG	hsa-mir-10a-5p+hsa-mir-10b-5p	164.20	188.54
+Other miRNAs	hsa-mir-125a-5p	UCCCUGAGACCCUUUAACCUGUGA	hsa-mir-125a-5p+hsa-mir-125b-5p	216.64	6.90
+Other miRNAs	hsa-mir-125b-5p	UCCCUGAGACCCUAACUUGUGA	hsa-mir-125a-5p+hsa-mir-125b-5p	216.64	6.90
+Other miRNAs	hsa-mir-126-5p	UCGUACCGUGAGUAAUAAUGCG	hsa-mir-126-5p	216.64	6.90
+Other miRNAs	hsa-mir-130a-5p	CAGUGCAAUGUUAAAAGGGCAU	hsa-mir-130a-5p+hsa-mir-130b-5p+hsa-mir-301-5p	373.94	6.90
+Other miRNAs	hsa-mir-140-5p	CAGUGGUUUUACCCUAUGGUAG	hsa-mir-140-5p	426.37	97.72
+Other miRNAs	hsa-mir-151-5p	UCGAGGAGCUCACAGUCUAGU	hsa-mir-151-5p	164.20	6.90
+Other miRNAs	hsa-mir-16-5p	UAGCAGCACGUAAAUAUUGGCG	hsa-mir-15a-5p+hsa-mir-15b-5p+hsa-mir-16-5p+hsa-mir-195-5p+hsa-mir-424-5p+hsa-mir-497-5p	4201.63	3367.19
+Other miRNAs	hsa-mir-17-5p	CAAAGUGCUUACAGUGCAGGUAG	hsa-mir-106a-5p+hsa-mir-106b-5p+hsa-mir-17-5p+hsa-mir-20a-5p+hsa-mir-20b-5p+hsa-mir-93-5p	636.11	1460.00
+Other miRNAs	hsa-mir-181b-5p	AACAUUCAUUGCUGUCGGUGGGU	hsa-mir-181a-5p+hsa-mir-181b-5p+hsa-mir-181c-5p+hsa-mir-181d-5p	164.20	6.90
+Other miRNAs	hsa-mir-182-5p	UUUGGCAAUGGUAGAACUCACACU	hsa-mir-182-5p	373.94	6.90
+Other miRNAs	hsa-mir-183-5p	UAUGGCACUGGUAGAAUUCACU	hsa-mir-183-5p	111.77	6.90
+Other miRNAs	hsa-mir-185-5p	UGGAGAGAAAGGCAGUUCCUGA	hsa-mir-185-5p	59.33	97.72
+Other miRNAs	hsa-mir-186-5p	CAAAGAAUUCUCCUUUUGGGCU	hsa-mir-186-5p	164.20	97.72
+Other miRNAs	hsa-mir-18a-5p	UAAGGUGCAUCUAGUGCAGAUAG	hsa-mir-18a-5p+hsa-mir-18b-5p	59.33	1550.82
+Other miRNAs	hsa-mir-190-5p	UGAUAUGUUUGAUAUAUUAGGU	hsa-mir-190-5p	59.33	6.90
+Other miRNAs	hsa-mir-191-5p	CAACGGAAUCCCAAAAGCAGCUG	hsa-mir-191-5p	373.94	279.36
+Other miRNAs	hsa-mir-192-5p	CUGACCUAUGAAUUGACAGCC	hsa-mir-192-5p+hsa-mir-215-5p	426.37	6.90
+Other miRNAs	hsa-mir-193b-5p	AACUGGCCCUCAAAGUCCCGCU	hsa-mir-193b-5p	59.33	6.90
+Other miRNAs	hsa-mir-194-5p	UGUAACAGCAACUCCAUGUGGA	hsa-mir-194-5p	321.51	6.90
+Other miRNAs	hsa-mir-196a-5p	UAGGUAGUUUCAUGUUGUUGGG	hsa-mir-196a-5p+hsa-mir-196b-5p	111.77	824.27
+Other miRNAs	hsa-mir-19b-5p	UGUGCAAAUCCAUGCAAAACUGA	hsa-mir-19a-5p+hsa-mir-19b-5p	531.24	1550.82
+Other miRNAs	hsa-mir-221-5p	AGCUACAUUGUCUGCUGGGUUUC	hsa-mir-221-5p+hsa-mir-222-5p	6.90	279.36
+Other miRNAs	hsa-mir-224-5p	CAAGUCACUAGUGGUUCCGUU	hsa-mir-224-5p	59.33	6.90
+Other miRNAs	hsa-mir-23b-5p	AUCACAUUGCCAGGGAUUACC	hsa-mir-23a-5p+hsa-mir-23b-5p	1055.58	6.90
+Other miRNAs	hsa-mir-24-5p	UGGCUCAGUUCAGCAGGAACAG	hsa-mir-24-5p	1212.88	97.72
+Other miRNAs	hsa-mir-26a-5p	UUCAAGUAAUCCAGGAUAGGCU	hsa-mir-26a-5p+hsa-mir-26b-5p	426.37	6.90
+Other miRNAs	hsa-mir-27b-5p	UUCACAGUGGCUAAGUUCUGC	hsa-mir-27a-5p+hsa-mir-27b-5p	2366.43	6.90
+Other miRNAs	hsa-mir-28-5p	AAGGAGCUCACAGUCUAUUGAG	hsa-mir-28-5p	111.77	6.90
+Other miRNAs	hsa-mir-29b-5p	UAGCACCAUUUGAAAUCAGUGUU	hsa-mir-29a-5p+hsa-mir-29b-5p+hsa-mir-29c-5p	1317.75	97.72
+Other miRNAs	hsa-mir-30a-3p	CUUUCAGUCGGAUGUUUGCAGC	hsa-mir-30a-3p+hsa-mir-30e-3p	59.33	6.90
+Other miRNAs	hsa-mir-30a-5p	UGUAAACAUCCUCGACUGGAAG	hsa-mir-30a-5p+hsa-mir-30b-5p+hsa-mir-30c-5p+hsa-mir-30d-5p+hsa-mir-30e-5p	1003.15	370.17
+Other miRNAs	hsa-mir-31-5p	AGGCAAGAUGCUGGCAUAGCU	hsa-mir-31-5p	531.24	6.90
+Other miRNAs	hsa-mir-32-5p	UAUUGCACAUUACUAAGUUGCA	hsa-mir-25-5p+hsa-mir-32-5p+hsa-mir-363-5p+hsa-mir-367-5p+hsa-mir-92a-5p	1317.75	279.36
+Other miRNAs	hsa-mir-324-3p	ACUGCCCCAGGUGCUGCUGGU	hsa-mir-324-3p	59.33	97.72
+Other miRNAs	hsa-mir-33-5p	GUGCAUUGUAGUUGCAUUG	hsa-mir-33-5p	59.33	97.72
+Other miRNAs	hsa-mir-335-5p	UCAAGAGCAAUAACGAAAAAUGU	hsa-mir-335-5p	59.33	6.90
+Other miRNAs	hsa-mir-339-5p	UCCCUGUCCUCCAGGAGCUCACG	hsa-mir-339-5p	6.90	97.72
+Other miRNAs	hsa-mir-361-5p	UUAUCAGAAUCUCCAGGGGUAC	hsa-mir-361-5p	59.33	6.90
+Other miRNAs	hsa-mir-374a-5p	UUAUAAUACAACCUGAUAAGUG	hsa-mir-374a-5p	688.54	6.90
+Other miRNAs	hsa-mir-423-5p	UGAGGGGCAGAGAGCGAGACUUU	hsa-mir-423-5p	111.77	6.90
+Other miRNAs	hsa-mir-425-5p	AAUGACACGAUCACUCCCGUUGA	hsa-mir-425-5p	164.20	6.90
+Other miRNAs	hsa-mir-452-5p	AACUGUUUGCAGAGGAAACUGA	hsa-mir-452-5p	111.77	6.90
+Other miRNAs	hsa-mir-7-5p	UGGAAGACUAGUGAUUUUGUUGU	hsa-mir-7-5p	111.77	6.90
+Other miRNAs	hsa-mir-9-5p	UCUUUGGUUAUCUAGCUGUAUGA	hsa-mir-9-5p	59.33	6.90
+Other miRNAs	hsa-mir-96-5p	UUUGGCACUAGCACAUUUUUGCU	hsa-mir-96-5p	59.33	6.90
+Other miRNAs	hsa-mir-99b-5p	CACCCGUAGAACCGACCUUGCG	hsa-mir-100-5p+hsa-mir-99a-5p+hsa-mir-99b-5p	583.68	188.54

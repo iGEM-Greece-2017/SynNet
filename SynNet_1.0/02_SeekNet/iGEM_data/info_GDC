@@ -1,0 +1,4 @@
+# How to make datafiles from GDC data
+1. Download GDC data in their usual directory structure
+2. Run 'preprocessGDC' from the 'miRNA-cancer-classification'
+3. Data in 'miRNA-cancer-classification/data/preprocessed_export'
