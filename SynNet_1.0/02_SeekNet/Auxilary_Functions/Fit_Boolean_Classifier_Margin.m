@@ -211,7 +211,11 @@ try
             %% Improve
             nNewHits = MaxPoolSize - CutFrom;
             EliteKids = round(nNewHits/2); NormalKids = nNewHits - EliteKids;
-            Parents = [randi(nElites, EliteKids, 1); randi(CutFrom-nElites, NormalKids, 1)+nElites]; % Use the Elites and normal hits 50/50% to make the next generation
+            if CutFrom > nElites
+              Parents = [randi(nElites, EliteKids, 1); randi(CutFrom-nElites, NormalKids, 1)+nElites]; % Use the Elites and normal hits 50/50% to make the next generation
+            else
+              Parents = [randi(nElites, EliteKids, 1); 0+nElites];
+            end
             
             NewHits = CPool.Function(Parents, :,:);NewHitsRookies = ones(nNewHits, 1);
             
