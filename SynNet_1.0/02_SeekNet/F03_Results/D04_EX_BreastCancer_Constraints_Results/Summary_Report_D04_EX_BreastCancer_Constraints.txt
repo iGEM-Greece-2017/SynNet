@@ -1,3 +1,0 @@
-AnalysisName	Genes	Samples	PositiveSamples	PositiveRate(%)	AnalysisMode	Pruning	HitMaxRound	WasStuck	Time(sec)	C_MarginA	C_MarginW	C_AUC	B_MarginA	B_MarginW	B_AUC	B_FPrate	B_FNrate
-Br. Cancer ER+ Her-	392	32	21	65.62	C	off	0	0	34.43	0.79	0.33	1.00	0.58	-0.93	59.09	81.82	0.00	
-Br. Cancer ER+ Her-	392	32	21	65.62	C	on	0	0	34.43	0.79	0.31	1.00	0.59	-0.93	59.09	81.82	0.00	

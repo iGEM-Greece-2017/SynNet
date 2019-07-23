@@ -1,3 +1,0 @@
-AnalysisName	Genes	Samples	PositiveSamples	PositiveRate(%)	AnalysisMode	Pruning	HitMaxRound	WasStuck	Time(sec)	C_MarginA	C_MarginW	C_AUC	B_MarginA	B_MarginW	B_AUC	B_FPrate	B_FNrate
-1	64	5	1	20.00	C	off	0	0	23.05	2.49	2.49	1.00	1.16	0.66	100.00	0.00	0.00	
-1	64	5	1	20.00	C	on	0	0	23.05	2.49	2.49	1.00	1.16	0.66	100.00	0.00	0.00	
