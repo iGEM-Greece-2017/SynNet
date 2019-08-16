@@ -53,11 +53,10 @@ for K = size(FunctionArray,1):-1:1
     %midLevel_act= mean(RowValues,1).*midLevel_act;
     % Mid level output:
     mirFF4= Consts.Continuous_Circuit_FF4max*midLevel_act;
-    lacI= Consts.Continuous_Circuit_LacImax*midLevel_act;
     %% handle the NOT part
     %Result(K,:)= Consts.Continuous_Circuit_OUTmax * F1_lac(lacI,[mirFF4;X(-Function(Fneqs),:)],...
     %  Consts.Kd.LacI,Consts.Continuous_Circuit_F1C);
-    Result(K,:)= Consts.Continuous_Circuit_OUTmax * Consts.Kd.LacI./(Consts.Kd.LacI+lacI) .* ...
+    Result(K,:)= Consts.Continuous_Circuit_OUTmax .* ...
       F1([mirFF4;X(-Function(Fneqs),:)],Consts.Continuous_Circuit_F1C);
     %Result(K,:)= Consts.Continuous_Circuit_OUTmax * F1([mirFF4;X(-Function(Fneqs),:)],Consts.Continuous_Circuit_F1C);
 end
